@@ -11,10 +11,14 @@ module.exports = {
       {
         test: /.js$/,
         loader: 'babel',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        query: {
+          stage: 0
+        }
       }
     ]
   },
+  devtool: 'inline-source-map',
   resolve: {
     root: path.resolve(__dirname, 'src'),
     modulesDirectories: ['node_modules']
