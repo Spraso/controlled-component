@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import ControlledInputTest from 'tests/controlled-input';
 import { valueChange } from 'actions';
 
@@ -11,7 +12,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onValueChange: value => dispatch(valueChange(value))
+    onValueChange:  bindActionCreators(valueChange, dispatch)
   };
 }
 

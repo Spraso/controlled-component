@@ -6,7 +6,7 @@ const initialState = {
 };
 
 function slowValidate(value) {
-  const iterations = 10000000;
+  const iterations = 1000;
   var randomResult = 0;
 
   for (let i = 0; i < iterations; i += 1) {
