@@ -1,7 +1,6 @@
 import React from 'react';
 import debounce from 'lodash/function/debounce';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import ControlledInput from 'controlled-input';
 import { syncAction, asyncAction } from 'actions';
 
