@@ -3,19 +3,19 @@ const ActionTypes = {
   ASYNC_UPDATE: 'async-update'
 };
 
-const simulateServerTime = function(value) {
+const checkUserExists = function(value) {
   return (dispatch) => {
     setTimeout(() => {
       dispatch({
         type: ActionTypes.ASYNC_UPDATE,
-        success: Math.random() > 0.5
+        existingUser: Math.random() > 0.5
       });
     }, 500);
   };
 }
 
 export function asyncAction(value) {
-  return simulateServerTime(value);
+  return checkUserExists(value);
 }
 
 export function syncAction(value) {

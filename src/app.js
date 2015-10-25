@@ -2,7 +2,7 @@ import React from 'react';
 import debounce from 'lodash/function/debounce';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import ControlledInputTest from 'tests/controlled-input';
+import ControlledInput from 'controlled-input';
 import { syncAction, asyncAction } from 'actions';
 
 function mapStateToProps(state) {
@@ -17,8 +17,8 @@ function mapDispatchToProps(dispatch) {
 
   return {
     onValueChange: value => {
-      debouncedAsync(value);
       dispatch(syncAction(value))
+      debouncedAsync(value);
     }
   };
 }
@@ -28,8 +28,10 @@ export default class App extends React.Component {
   render() {
     return (
       <form className='test-form'>
-        <ControlledInputTest
+        <ControlledInput
           value={this.props.value}
+          name='username'
+          label='User name'
           onChange={this.props.onValueChange} />
         <p>{this.props.message}</p>
       </form>

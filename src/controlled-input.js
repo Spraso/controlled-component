@@ -4,10 +4,10 @@ export default class ControlledInput extends React.Component {
   render() {
     return (
       <fieldset>
-        <label>Controlled input</label>
+        <label>{this.props.label}</label>
         <input type='text'
           ref='input'
-          name='controlled'
+          name={this.props.name}
           value={this.props.value}
           onChange={this.handleChange.bind(this)}/>
       </fieldset>

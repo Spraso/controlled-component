@@ -2,8 +2,8 @@ import assign from 'object-assign';
 import Actions from 'actions';
 
 const initialState = {
-  value: 'Initial field value',
-  message: 'Start typing...'
+  value: '',
+  message: ''
 };
 
 export default function (state = initialState, action) {
@@ -12,7 +12,7 @@ export default function (state = initialState, action) {
       return assign({}, state, { value: action.newValue });
     case Actions.ASYNC_UPDATE:
       return assign({}, state, {
-        message: action.success ? 'Successful' :  'Failure'
+        message: `Username ${action.existingUser ? 'exists' :  'available'}`
       });
     default:
       return state;
